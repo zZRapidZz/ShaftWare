@@ -3068,6 +3068,9 @@ repeat wait() until game:IsLoaded()
 	local ESPObjects = {}
 
 	local function Track(Player)
+		-- too lazy to add a proper check, discontinued anyway so
+		if not (Player.ClassName == "Player" or Player.ClassName == "Folder") then return end
+
 		for i,v in next, ESPObjects do
 			if not v.Active then
 				v.Active = true
@@ -6683,7 +6686,7 @@ repeat wait() until game:IsLoaded()
 	end
 
 	if not library:GetConfigs()[1] then
-		writefile(library.foldername .. "/Default" .. library.fileext, loadstring(game:HttpGet("https://raw.githubusercontent.com/Jan5106/uwuware_final/main/default_config.uw", true)))
+		writefile(library.foldername .. "/Default" .. library.fileext, loadstring(game:HttpGet("https://raw.githubusercontent.com/Jan5106/uwuware_final/main/default_config.lua", true))())
 		library.options["Config List"]:AddValue"Default"
 		library:LoadConfig"Default"
 	end
