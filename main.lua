@@ -7,13 +7,6 @@ end
 
 repeat wait() until game:IsLoaded()
 
--- the rewrite was lost, this was the latest version of uwuware I could find
--- last time this was modified before being discontinued was around October 2021, so most of this shit's probably obsolete (USE AT YOUR OWN RISK!!!)
--- there are a lot of shitty methods here that were never cleaned up, a lot of shitty organization and shitty code in general
--- anyway, enjoy trying to make sense out of any of this
-
-
--- if you're just looking to get the library for whatever reason, just copy everything from below till you see LIBRARY END
 
 	--LIBRARY START
 	--Services
@@ -26,7 +19,7 @@ repeat wait() until game:IsLoaded()
 		getgenv().library:Unload()
 	end
 
-	local library = {design = getgenv().design == "kali" and "kali" or "uwuware", tabs = {}, draggable = true, flags = {}, title = "uwuware", open = false, mousestate = inputService.MouseIconEnabled, popup = nil, instances = {}, connections = {}, options = {}, notifications = {}, tabSize = 0, theme = {}, foldername = "uw_configs", fileext = ".uw"}
+	local library = {design = getgenv().design == "kali" and "kali" or "shaftware", tabs = {}, draggable = true, flags = {}, title = "shaftware", open = false, mousestate = inputService.MouseIconEnabled, popup = nil, instances = {}, connections = {}, options = {}, notifications = {}, tabSize = 0, theme = {}, foldername = "sw_configs", fileext = ".sw"}
 	getgenv().library = library
 
 	--Locals
@@ -2721,7 +2714,7 @@ repeat wait() until game:IsLoaded()
 	library.SettingsMain = library.SettingsColumn:AddSection"Main"
 	library.SettingsMain:AddButton({text = "Unload Cheat", nomouse = true, callback = function()
 		library:Unload()
-		getgenv().uwuware = nil
+		getgenv().shaftware = nil
 	end})
 	library.SettingsMain:AddBind({text = "Panic Key", callback = library.options["Unload Cheat"].callback})
 
@@ -2858,7 +2851,7 @@ repeat wait() until game:IsLoaded()
 			Position = UDim2.new(0, 4, 0, 0),
 			Size = UDim2.new(0, 70, 0, 16),
 			BackgroundTransparency = 1,
-			Text = "uwuware",
+			Text = "shaftware",
 			Font = Enum.Font.Gotham,
 			TextColor3 = Color3.fromRGB(255, 65, 65),
 			TextSize = 16,
@@ -5024,7 +5017,7 @@ repeat wait() until game:IsLoaded()
 			local MainColumn1 = CBTab:AddColumn()
 			local e1 = MainColumn:AddSection"Rage"
 			local e2 = tick()
-			--local e4 = game:HttpGet("https://uwuware.cool/scripts/getfile.php?ID=rrkbB7GagR8Vbg4byAdJvw9HouiWOG9I", true)
+			
 
 			local CBClient = {}
 			for i,v in next, getgc() do
@@ -5447,7 +5440,7 @@ repeat wait() until game:IsLoaded()
 			repeat wait(1) Events = FFC(RepStorage, "RemoteEvents") until Events
 
 			local Say = {
-				"You don't use uwuware? Okay bro,,, dot dot dot",
+				"You don't use shaftware? Okay bro,,, dot dot dot",
 				"Did you seriously just die again?",
 				"Yeah sorry, the owner made the chat spammer,,,",
 				"Are you an ape and keep getting killed? Thought so.",
@@ -6686,7 +6679,7 @@ repeat wait() until game:IsLoaded()
 	end
 
 	if not library:GetConfigs()[1] then
-		writefile(library.foldername .. "/Default" .. library.fileext, loadstring(game:HttpGet("https://raw.githubusercontent.com/Jan5106/uwuware_final/main/default_config.lua", true))())
+		writefile(library.foldername .. "/Default" .. library.fileext, loadstring(game:HttpGet("https://raw.githubusercontent.com/zZRapidZz/ShaftWare/main/default_config.lua", true))())
 		library.options["Config List"]:AddValue"Default"
 		library:LoadConfig"Default"
 	end
